@@ -1,0 +1,1276 @@
+/* =====================================================
+   BIRTHDAY PARTY CSS
+===================================================== */
+
+
+/* ---------------------------------------------
+   RESET
+--------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "DM Sans", sans-serif;
+    color: #5f2845;
+    background:
+        radial-gradient(circle at 50% 20%, #fff7fb 0%, #ffeaf3 45%, #ffd8e8 100%);
+    cursor: pointer;
+}
+
+
+/* ---------------------------------------------
+   HEADER
+--------------------------------------------- */
+
+.party-header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 55px 20px 10px;
+}
+
+.tiny-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #d75a91;
+    margin-bottom: 13px;
+}
+
+.party-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.15;
+    color: #7d3155;
+    font-weight: 600;
+}
+
+.instruction {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #a75c7c;
+    transition: opacity .4s ease;
+}
+
+
+/* ---------------------------------------------
+   PARTY STAGE
+--------------------------------------------- */
+
+.party-stage {
+    position: relative;
+    min-height: 680px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* ---------------------------------------------
+   BACKGROUND DECORATIONS
+--------------------------------------------- */
+
+.background-decor {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.heart,
+.sparkle,
+.dot {
+    position: absolute;
+    pointer-events: none;
+}
+
+.heart {
+    color: rgba(226, 76, 137, .25);
+    font-size: 25px;
+    animation: floatDecor 5s ease-in-out infinite;
+}
+
+.h1 {
+    left: 8%;
+    top: 24%;
+}
+
+.h2 {
+    left: 17%;
+    top: 72%;
+    animation-delay: 1s;
+}
+
+.h3 {
+    right: 10%;
+    top: 28%;
+    animation-delay: 1.7s;
+}
+
+.h4 {
+    right: 19%;
+    top: 70%;
+    animation-delay: 2.4s;
+}
+
+.h5 {
+    left: 47%;
+    top: 12%;
+    animation-delay: 3s;
+}
+
+.sparkle {
+    color: rgba(222, 55, 123, .35);
+    font-size: 22px;
+    animation: sparkleFloat 3.5s ease-in-out infinite;
+}
+
+.s1 {
+    left: 13%;
+    top: 39%;
+}
+
+.s2 {
+    right: 15%;
+    top: 43%;
+    animation-delay: 1s;
+}
+
+.s3 {
+    left: 27%;
+    top: 18%;
+    animation-delay: 1.8s;
+}
+
+.s4 {
+    right: 30%;
+    top: 75%;
+    animation-delay: 2.5s;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(227, 81, 139, .25);
+    animation: dotFloat 4s ease-in-out infinite;
+}
+
+.d1 {
+    left: 5%;
+    top: 52%;
+}
+
+.d2 {
+    right: 7%;
+    top: 57%;
+    animation-delay: 1s;
+}
+
+.d3 {
+    left: 34%;
+    top: 84%;
+    animation-delay: 2s;
+}
+
+.d4 {
+    right: 33%;
+    top: 14%;
+    animation-delay: 3s;
+}
+
+
+/* ---------------------------------------------
+   ORBIT DECORATIONS
+--------------------------------------------- */
+
+.orbit-decoration {
+    position: absolute;
+    z-index: 2;
+    color: #e25391;
+    opacity: .4;
+    font-size: 23px;
+    transition: all .8s ease;
+}
+
+.od1 {
+    left: 22%;
+    top: 31%;
+}
+
+.od2 {
+    right: 24%;
+    top: 30%;
+}
+
+.od3 {
+    left: 27%;
+    bottom: 25%;
+}
+
+.od4 {
+    right: 26%;
+    bottom: 24%;
+}
+
+
+/* ---------------------------------------------
+   GIFT
+--------------------------------------------- */
+
+.gift-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 230px;
+    height: 250px;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity .7s ease, transform .8s ease;
+}
+
+.gift-glow {
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    width: 220px;
+    height: 60px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: rgba(230, 72, 135, .15);
+    filter: blur(18px);
+}
+
+.gift-note {
+    position: absolute;
+    left: 50%;
+    top: -20px;
+    transform: translateX(-50%);
+    width: 180px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #a25073;
+    opacity: 1;
+    transition: opacity .5s ease, transform .6s ease;
+}
+
+.gift-box {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    width: 175px;
+    height: 140px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #ff8fbd, #e94b91);
+    box-shadow:
+        0 18px 35px rgba(179, 45, 100, .22),
+        inset 0 2px 8px rgba(255, 255, 255, .3);
+}
+
+.gift-ribbon {
+    position: absolute;
+    z-index: 2;
+    background: rgba(255, 226, 238, .75);
+}
+
+.gift-ribbon.vertical {
+    left: 50%;
+    top: 0;
+    width: 25px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.gift-ribbon.horizontal {
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 24px;
+    transform: translateY(-50%);
+}
+
+.gift-shine {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+    width: 30px;
+    height: 85px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .13);
+    transform: rotate(15deg);
+}
+
+.gift-lid {
+    position: absolute;
+    left: -10px;
+    top: -24px;
+    width: calc(100% + 20px);
+    height: 42px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #ff9bc5, #eb4f93);
+    box-shadow: 0 7px 15px rgba(168, 40, 93, .2);
+    transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+.bow {
+    position: absolute;
+    left: 50%;
+    top: -24px;
+    width: 72px;
+    height: 50px;
+    transform: translateX(-50%);
+}
+
+.bow-left,
+.bow-right {
+    position: absolute;
+    top: 10px;
+    width: 40px;
+    height: 28px;
+    border: 8px solid #ffd2e4;
+    background: transparent;
+}
+
+.bow-left {
+    left: 0;
+    border-radius: 60% 40% 60% 40%;
+    transform: rotate(-18deg);
+}
+
+.bow-right {
+    right: 0;
+    border-radius: 40% 60% 40% 60%;
+    transform: rotate(18deg);
+}
+
+.bow-center {
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    width: 18px;
+    height: 18px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff0f7;
+}
+
+.lid-heart {
+    position: absolute;
+    right: 22px;
+    top: 9px;
+    color: rgba(255, 255, 255, .85);
+    font-size: 19px;
+}
+
+
+/* ---------------------------------------------
+   CELEBRATION
+--------------------------------------------- */
+
+.celebration {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(.85);
+    transition:
+        opacity .9s ease,
+        transform 1s cubic-bezier(.2, .8, .2, 1),
+        visibility .9s ease;
+    z-index: 5;
+}
+
+body.celebrating .celebration {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+body.celebrating .gift-wrapper {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.65);
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------
+   CAKE
+--------------------------------------------- */
+
+.cake-area {
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    width: 300px;
+    height: 310px;
+    transform: translateX(-50%);
+}
+
+.cake {
+    position: relative;
+    width: 230px;
+    height: 240px;
+    margin: auto;
+}
+
+.cake-plate {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 255px;
+    height: 18px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #fff5fa;
+    box-shadow: 0 7px 14px rgba(177, 53, 103, .18);
+}
+
+
+/* ---------------------------------------------
+   CAKE BODY
+--------------------------------------------- */
+
+.cake-body {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    width: 210px;
+    height: 115px;
+    transform: translateX(-50%);
+    border-radius: 18px 18px 24px 24px;
+    background: linear-gradient(135deg, #f889b4, #e85694);
+    box-shadow:
+        inset 0 5px 10px rgba(255, 255, 255, .2),
+        0 12px 20px rgba(170, 45, 96, .16);
+}
+
+.cake-stripe {
+    position: absolute;
+    left: 0;
+    top: 42px;
+    width: 100%;
+    height: 17px;
+    background: rgba(255, 219, 234, .65);
+}
+
+.cake-decoration {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff2f8;
+    font-size: 21px;
+}
+
+
+/* ---------------------------------------------
+   CAKE TOP
+--------------------------------------------- */
+
+.cake-top {
+    position: absolute;
+    left: 50%;
+    top: 67px;
+    width: 210px;
+    height: 48px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #ffd7e7;
+    box-shadow:
+        inset 0 -5px 8px rgba(190, 57, 104, .1),
+        0 5px 10px rgba(178, 49, 99, .12);
+    z-index: 3;
+}
+
+.cream {
+    position: absolute;
+    width: 48px;
+    height: 22px;
+    border-radius: 50%;
+    background: #fff8fb;
+    bottom: -4px;
+}
+
+.cream-one {
+    left: 30px;
+}
+
+.cream-two {
+    left: 82px;
+}
+
+.cream-three {
+    right: 28px;
+}
+
+
+/* ---------------------------------------------
+   SPRINKLES
+--------------------------------------------- */
+
+.sprinkles {
+    position: absolute;
+    inset: 0;
+}
+
+.sprinkles span {
+    position: absolute;
+    width: 12px;
+    height: 4px;
+    border-radius: 5px;
+    background: #e85b96;
+}
+
+.sprinkles span:nth-child(1) {
+    left: 28px;
+    top: 15px;
+    transform: rotate(20deg);
+}
+
+.sprinkles span:nth-child(2) {
+    left: 65px;
+    top: 7px;
+    transform: rotate(-18deg);
+}
+
+.sprinkles span:nth-child(3) {
+    left: 105px;
+    top: 18px;
+    transform: rotate(15deg);
+}
+
+.sprinkles span:nth-child(4) {
+    right: 63px;
+    top: 8px;
+    transform: rotate(-20deg);
+}
+
+.sprinkles span:nth-child(5) {
+    right: 28px;
+    top: 19px;
+    transform: rotate(22deg);
+}
+
+.sprinkles span:nth-child(6) {
+    left: 88px;
+    top: 29px;
+    transform: rotate(-10deg);
+}
+
+
+/* ---------------------------------------------
+   CANDLES
+--------------------------------------------- */
+
+.candle {
+    position: absolute;
+    top: 15px;
+    width: 15px;
+    height: 55px;
+    border-radius: 5px 5px 3px 3px;
+    background: linear-gradient(
+        to right,
+        #ff9ac3,
+        #fff0f7,
+        #ff72ae
+    );
+    box-shadow: 0 4px 8px rgba(173, 48, 97, .14);
+    z-index: 6;
+}
+
+.candle-one {
+    left: 70px;
+}
+
+.candle-two {
+    left: 108px;
+}
+
+.candle-three {
+    left: 146px;
+}
+
+.flame {
+    position: absolute;
+    left: 50%;
+    top: -25px;
+    width: 13px;
+    height: 22px;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 50% 50%;
+    background: radial-gradient(
+        circle at 50% 65%,
+        #fff9d8 0 22%,
+        #ffd65b 35%,
+        #ff8b45 70%,
+        transparent 72%
+    );
+    filter: drop-shadow(0 0 8px rgba(255, 169, 65, .7));
+    animation: flameMove .7s ease-in-out infinite alternate;
+    transform-origin: 50% 100%;
+}
+
+body.final-party .flame {
+    animation: blowOut .8s ease forwards;
+}
+
+
+/* ---------------------------------------------
+   TEDDY
+--------------------------------------------- */
+
+.teddy-area {
+    position: absolute;
+    left: 50%;
+    top: 44%;
+    width: 190px;
+    transform: translateX(50%);
+    text-align: center;
+}
+
+.teddy {
+    position: relative;
+    width: 130px;
+    height: 180px;
+    margin: auto;
+}
+
+.ear {
+    position: absolute;
+    top: 3px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #c98766;
+}
+
+.ear-left {
+    left: 5px;
+}
+
+.ear-right {
+    right: 5px;
+}
+
+.teddy-head {
+    position: absolute;
+    left: 50%;
+    top: 18px;
+    width: 100px;
+    height: 90px;
+    transform: translateX(-50%);
+    border-radius: 48% 48% 45% 45%;
+    background: #d79a78;
+}
+
+.eye {
+    position: absolute;
+    top: 33px;
+    width: 8px;
+    height: 10px;
+    border-radius: 50%;
+    background: #59352b;
+}
+
+.eye-left {
+    left: 28px;
+}
+
+.eye-right {
+    right: 28px;
+}
+
+.muzzle {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 52px;
+    height: 34px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #edc0a2;
+}
+
+.nose {
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 12px;
+    height: 9px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #583229;
+}
+
+.mouth {
+    position: absolute;
+    left: 50%;
+    top: 16px;
+    width: 18px;
+    height: 9px;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #583229;
+    border-radius: 0 0 50% 50%;
+}
+
+.blush {
+    position: absolute;
+    top: 55px;
+    width: 18px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(235, 104, 131, .35);
+}
+
+.blush-left {
+    left: 10px;
+}
+
+.blush-right {
+    right: 10px;
+}
+
+.teddy-body {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 105px;
+    height: 90px;
+    transform: translateX(-50%);
+    border-radius: 45% 45% 40% 40%;
+    background: #d79a78;
+}
+
+.belly-heart {
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+    color: #fff0f6;
+    font-size: 28px;
+}
+
+.arm {
+    position: absolute;
+    top: 103px;
+    width: 35px;
+    height: 72px;
+    border-radius: 50%;
+    background: #c98766;
+}
+
+.arm-left {
+    left: 0;
+    transform: rotate(12deg);
+}
+
+.arm-right {
+    right: 0;
+    transform: rotate(-12deg);
+}
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    width: 45px;
+    height: 28px;
+    border-radius: 50%;
+    background: #c98766;
+}
+
+.foot-left {
+    left: 18px;
+}
+
+.foot-right {
+    right: 18px;
+}
+
+.teddy-caption {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #a95a7c;
+}
+
+
+/* ---------------------------------------------
+   BIRTHDAY MESSAGE
+--------------------------------------------- */
+
+.birthday-message {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 165px);
+    width: min(90%, 540px);
+    transform: translateX(-50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease .5s;
+}
+
+body.celebrating .birthday-message {
+    opacity: 1;
+}
+
+.birthday-message h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(28px, 5vw, 42px);
+    color: #8c315d;
+}
+
+.birthday-message h2 span {
+    color: #e53e8d;
+}
+
+.birthday-message p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #a65a7b;
+}
+
+
+/* ---------------------------------------------
+   PARTY LIGHTS
+--------------------------------------------- */
+
+.party-lights {
+    position: absolute;
+    left: 50%;
+    top: 12%;
+    width: min(85%, 700px);
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+
+.party-lights span {
+    width: 10px;
+    height: 16px;
+    border-radius: 50%;
+    background: #f36da9;
+    box-shadow: 0 0 12px rgba(243, 109, 169, .65);
+    animation: lightPulse 1s ease-in-out infinite alternate;
+}
+
+.party-lights span:nth-child(even) {
+    animation-delay: .4s;
+}
+
+body.celebrating .party-lights {
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------
+   POPPERS
+--------------------------------------------- */
+
+.popper {
+    position: absolute;
+    bottom: 22%;
+    width: 58px;
+    height: 82px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #ff85b8, #e83d87);
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity .4s ease, transform .7s cubic-bezier(.2, .8, .2, 1);
+}
+
+.popper-left {
+    left: 6%;
+    transform-origin: bottom left;
+    transform: rotate(-22deg) scale(.7);
+}
+
+.popper-right {
+    right: 6%;
+    transform-origin: bottom right;
+    transform: rotate(22deg) scale(.7);
+}
+
+.popper span {
+    position: absolute;
+    left: 50%;
+    top: -22px;
+    width: 10px;
+    height: 32px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    background: #ffd2e4;
+}
+
+body.final-party .popper {
+    opacity: 1;
+}
+
+body.final-party .popper-left {
+    transform: rotate(-22deg) scale(1);
+}
+
+body.final-party .popper-right {
+    transform: rotate(22deg) scale(1);
+}
+
+
+/* ---------------------------------------------
+   CONFETTI
+--------------------------------------------- */
+
+.confetti-container,
+.sparkle-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 50;
+}
+
+.confetti {
+    position: absolute;
+    top: -30px;
+    animation: confettiFall linear forwards;
+}
+
+.party-sparkle {
+    position: absolute;
+    pointer-events: none;
+    animation: partySparkle 1.5s ease-out forwards;
+    text-shadow: 0 0 10px rgba(255, 94, 162, .45);
+}
+
+
+/* ---------------------------------------------
+   FINAL MESSAGE
+--------------------------------------------- */
+
+.final-message {
+    position: fixed;
+    left: 50%;
+    bottom: 35px;
+    width: min(90%, 520px);
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 13px 20px;
+    border-radius: 30px;
+    background: rgba(255, 248, 252, .88);
+    box-shadow: 0 10px 30px rgba(172, 57, 106, .12);
+    color: #985070;
+    font-size: 13px;
+    opacity: 0;
+    z-index: 60;
+    transition: opacity .8s ease;
+    backdrop-filter: blur(8px);
+}
+
+.final-message span {
+    color: #e53e8d;
+    margin: 0 5px;
+}
+
+
+/* ---------------------------------------------
+   BOTTOM HINT
+--------------------------------------------- */
+
+.bottom-hint {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 20;
+    font-size: 13px;
+    color: #a95c7c;
+    transition: opacity .5s ease;
+}
+
+.bottom-hint span {
+    color: #e34891;
+}
+
+
+/* ---------------------------------------------
+   BODY STATES
+--------------------------------------------- */
+
+body.box-opened .gift-lid {
+    transform: translateY(-42px) rotate(-3deg);
+}
+
+body.box-opened .bow {
+    transform: translateX(-50%) translateY(-25px);
+}
+
+body.box-opened .gift-note {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-15px);
+}
+
+body.box-opened .gift-wrapper {
+    transform: translate(-50%, -50%) scale(1.03);
+}
+
+body.celebrating {
+    background:
+        radial-gradient(circle at 50% 20%, #fffafd 0%, #ffe8f2 42%, #ffd3e5 100%);
+}
+
+body.final-party .final-message {
+    opacity: 1;
+}
+
+
+/* ---------------------------------------------
+   ANIMATIONS
+--------------------------------------------- */
+
+@keyframes floatDecor {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes sparkleFloat {
+    0%,
+    100% {
+        opacity: .3;
+        transform: translateY(0) scale(.9);
+    }
+
+    50% {
+        opacity: .8;
+        transform: translateY(-12px) scale(1.1);
+    }
+}
+
+@keyframes dotFloat {
+    0%,
+    100% {
+        transform: translateY(0);
+        opacity: .3;
+    }
+
+    50% {
+        transform: translateY(-10px);
+        opacity: .7;
+    }
+}
+
+@keyframes flameMove {
+    from {
+        transform: translateX(-50%) scale(.92) rotate(-3deg);
+    }
+
+    to {
+        transform: translateX(-50%) scale(1.05) rotate(3deg);
+    }
+}
+
+@keyframes blowOut {
+    0% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    45% {
+        opacity: .7;
+        transform: translateX(-50%) translateX(7px) scale(.7) rotate(12deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateX(18px) scale(.1) rotate(25deg);
+    }
+}
+
+@keyframes lightPulse {
+    from {
+        opacity: .45;
+        transform: scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes partySparkle {
+    0% {
+        opacity: 0;
+        transform: scale(.2) rotate(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1.2) rotate(45deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.4) rotate(120deg) translateY(-30px);
+    }
+}
+
+
+/* ---------------------------------------------
+   RESPONSIVE
+--------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .party-stage {
+        min-height: 650px;
+    }
+
+    .cake-area {
+        top: 27%;
+    }
+
+    .teddy-area {
+        top: 45%;
+    }
+
+    .birthday-message {
+        top: calc(50% + 155px);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .party-header {
+        padding-top: 40px;
+    }
+
+    .party-header h1 {
+        font-size: 32px;
+    }
+
+    .party-stage {
+        min-height: 620px;
+    }
+
+    .cake-area {
+        top: 26%;
+        transform: translateX(-50%) scale(.9);
+    }
+
+    .teddy-area {
+        top: 45%;
+        transform: translateX(20%) scale(.9);
+    }
+
+    .birthday-message {
+        top: calc(50% + 145px);
+    }
+
+    .popper-left {
+        left: 2%;
+    }
+
+    .popper-right {
+        right: 2%;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .party-header {
+        padding-top: 30px;
+    }
+
+    .party-header h1 {
+        font-size: 28px;
+    }
+
+    .instruction {
+        font-size: 13px;
+    }
+
+    .party-stage {
+        min-height: 600px;
+    }
+
+    .cake-area {
+        top: 24%;
+        transform: translateX(-50%) scale(.78);
+    }
+
+    .teddy-area {
+        top: 43%;
+        transform: translateX(10%) scale(.75);
+    }
+
+    .birthday-message {
+        top: calc(50% + 130px);
+        width: 90%;
+    }
+
+    .birthday-message h2 {
+        font-size: 29px;
+    }
+
+    .birthday-message p {
+        font-size: 12px;
+    }
+
+    .popper {
+        width: 45px;
+        height: 68px;
+    }
+
+}
+
+
+/* ---------------------------------------------
+   REDUCED MOTION
+--------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+}

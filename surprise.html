@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Something I Wrote ♡</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body class="surprise-page">
+
+
+    <!-- Floating Hearts -->
+
+    <div class="floating-hearts">
+
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+        <span>♡</span>
+
+    </div>
+
+
+
+    <!-- Navigation -->
+
+    <header class="navbar">
+
+        <div class="logo">
+
+            a little ♡
+
+        </div>
+
+
+        <button class="menu-btn"
+                onclick="toggleMenu()">
+
+            ☰
+
+        </button>
+
+
+        <nav id="navMenu">
+
+            <a href="index.html">
+
+                Home
+
+            </a>
+
+
+            <a href="wishes.html">
+
+                Wishes
+
+            </a>
+
+
+            <a href="surprise.html"
+               class="active">
+
+                Surprise
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- Surprise -->
+
+    <main class="surprise-container">
+
+
+        <div class="surprise-intro">
+
+            <span>
+
+                🎀 one last little thing
+
+            </span>
+
+
+            <h1>
+
+                I wrote something
+                for you.
+
+            </h1>
+
+
+            <p>
+
+                It's probably a little cheesy...
+                but I wanted you to have it. 🩷
+
+            </p>
+
+        </div>
+
+
+
+        <!-- Closed Note -->
+
+        <section id="poemRevealCard"
+                 class="poem-reveal-card">
+
+
+            <div class="closed-note">
+
+
+                <div class="note-heart">
+
+                    ♡
+
+                </div>
+
+
+                <div class="note-lines">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+
+                <div class="note-ribbon">
+
+                    🎀
+
+                </div>
+
+            </div>
+
+
+
+            <p class="tap-text">
+
+                There's something inside...
+
+            </p>
+
+
+            <button class="reveal-btn"
+                    onclick="revealPoem()">
+
+                Tap to open ♡
+
+            </button>
+
+        </section>
+
+
+
+        <!-- Poem -->
+
+        <section id="poemSection"
+                 class="poem-section">
+
+
+            <div class="poem-top-heart">
+
+                ♡
+
+            </div>
+
+
+            <p class="poem-caption">
+
+                something I wrote,
+                just for this little moment
+
+            </p>
+
+
+            <div class="poem-image-wrapper">
+
+
+                <img src="images/poem.jpeg"
+                     alt="A poem written especially for you"
+                     class="poem-image">
+
+            </div>
+
+
+            <div class="poem-bottom">
+
+                <span>
+
+                    Read it slowly. ♡
+
+                </span>
+
+
+                <p>
+
+                    Some words are better felt
+                    than explained.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Link To Final Party -->
+
+        <div id="afterPoem"
+             class="after-poem">
+
+
+            <p>
+
+                And that's not quite the end...
+
+            </p>
+
+
+            <span>
+
+                There's one last little surprise waiting. 🎀
+
+            </span>
+
+
+            <a href="party.html"
+               class="party-next-btn">
+
+                One last surprise ♡
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Back -->
+
+        <div class="back-home">
+
+            <a href="index.html">
+
+                ← Go back to the beginning
+
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+
+    <footer>
+
+        End of the little birthday corner ♡
+
+    </footer>
+
+
+
+    <!-- =========================================
+         POEM BACKGROUND MUSIC
+         ========================================= -->
+
+    <audio id="poemMusic"
+           src="music/music.mp3"
+           loop
+           preload="auto">
+
+    </audio>
+
+
+
+    <!-- =========================================
+         MUSIC CONTROL
+         ========================================= -->
+
+    <button id="musicControl"
+            class="music-control"
+            type="button"
+            aria-label="Play background music"
+            onclick="togglePoemMusic()">
+
+        ♪
+
+    </button>
+
+
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
